@@ -50,10 +50,9 @@ class sfTwigView extends sfPHPView
     // empty array becuase it changes based on the rendering context
     $this->loader = new Twig_Loader_Filesystem(array());
 
-    $this->twig = new sfTwigEnvironment($this->loader, array(
-      'cache'      => sfConfig::get('sf_template_cache_dir'),
-      'debug'      => sfConfig::get('sf_debug', false),
-      'sf_context' => $this->context,
+    $this->twig = new sfTwigEnvironment($this->loader, array_merge(array(
+        'sf_context' => $this->context,
+      ), sfConfig::get('sf_twig_options', array())
     ));
 
     if ($this->twig->isDebug())
