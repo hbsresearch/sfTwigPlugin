@@ -8,11 +8,9 @@ through standard symfony settings.
 Settings
 --------
 
-Right now the configuration is kinda limited or not needed. `sfTwigView` uses
-`sf_debug` to determine if Twig should automatically reload and cache the
-templates.
-
 ### `settings.yml`
+
+An `sf_twig_options` setting has been added to pass options to the `Twig_Environment` constructor.
 
 An `sf_twig_extensions` setting has been added to `settings.yml` that holds an
 array of `Twig_Extension` classes. `sfTwigView` takes all those names and
