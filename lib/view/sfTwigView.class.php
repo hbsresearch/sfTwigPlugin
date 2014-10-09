@@ -47,7 +47,7 @@ class sfTwigView extends sfPHPView
 
     $this->configuration = $this->context->getConfiguration();
 
-    // empty array becuase it changes based on the rendering context
+    // empty array because it changes based on the rendering context
     $this->loader = new Twig_Loader_Filesystem(array());
 
     $this->twig = new sfTwigEnvironment($this->loader, array_merge(array(
