@@ -120,7 +120,7 @@ class sfTwigView extends sfPHPView
       $this->dispatcher->notify(new sfEvent($this, 'application.log', array(sprintf('Render "%s"', $file))));
     }
 
-    $this->loader->setPaths((array) realpath(dirname($file)));
+    $this->loader->setPaths(array_merge((array) realpath(dirname($file)), $this->configuration->getDecoratorDirs()));
 
     $event = $this->dispatcher->filter(new sfEvent($this, 'template.filter_parameters'), $this->attributeHolder->getAll());
 
