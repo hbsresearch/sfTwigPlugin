@@ -18,10 +18,10 @@
  */
 class Helper_Twig_Extension extends Twig_Extension
 {
-  public function getFilters()
+  public function getFunctions()
   {
     return array(
-      'use_helper' => new Twig_Filter_Function('use_helper'),
+      'use_helper' => new Twig_Function_Function('use_helper'),
     );
   }
 

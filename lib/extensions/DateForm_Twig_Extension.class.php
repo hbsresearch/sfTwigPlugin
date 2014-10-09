@@ -18,7 +18,7 @@
  */
 class DateForm_Twig_Extension extends Twig_Extension
 {
-  public function getFilters()
+  public function getFunctions()
   {
     return array(
       'select_day_tag'      => array('select_day_tag', false),

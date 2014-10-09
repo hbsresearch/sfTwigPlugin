@@ -18,7 +18,7 @@
  */
 class Form_Twig_Extension extends Twig_Extension
 {
-  public function getFilters()
+  public function getFunctions()
   {
     return array(
       'options_for_select'   => array('options_for_select', false),

@@ -18,11 +18,11 @@
  */
 class Number_Twig_Extension extends Twig_Extension
 {
-  public function getFilters()
+  public function getFunctions()
   {
     return array(
-      'format_number'   => new Twig_Filter_Function('format_number'),
-      'format_currency' => new Twig_Filter_Function('format_currency'),
+      'format_number'   => new Twig_Function_Function('format_number'),
+      'format_currency' => new Twig_Function_Function('format_currency'),
     );
   }
 

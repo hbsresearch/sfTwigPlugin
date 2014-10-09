@@ -18,7 +18,7 @@
  */
 class Validation_Twig_Extension extends Twig_Extension
 {
-  public function getFilters()
+  public function getFunctions()
   {
     return array(
       'form_has_error' => array('form_has_error', false),
