@@ -1,3 +1,8 @@
 all:
   .settings:
     twig_extensions: []
+    # See Twig_Environment options for available options
+    twig_options:
+        debug:              %SF_DEBUG%
+        cache:              %SF_TEMPLATE_CACHE_DIR%
+        auto_reload:        %SF_DEBUG%

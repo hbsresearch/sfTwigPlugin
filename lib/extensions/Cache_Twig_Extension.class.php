@@ -18,11 +18,11 @@
  */
 class Cache_Twig_Extension extends Twig_Extension
 {
-  public function getFilters()
+  public function getFunctions()
   {
     return array(
-      'cache'      => new Twig_Filter_Function('cache'),
-      'cache_save' => new Twig_Filter_Function('cache_save'),
+      'cache'      => new Twig_Function_Function('cache'),
+      'cache_save' => new Twig_Function_Function('cache_save'),
     );
   }
 

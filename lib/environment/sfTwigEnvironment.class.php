@@ -31,9 +31,10 @@ class sfTwigEnvironment extends Twig_Environment
    */
   public function __construct(Twig_LoaderInterface $loader, array $options = array())
   {
-    parent::__construct($loader, $options);
-
     $this->context = isset($options['sf_context']) && $options['sf_context'] instanceof sfContext ? $options['sf_context'] : sfContext::getInstance();
+    unset($options['sf_context']);
+
+    parent::__construct($loader, $options);
   }
 
   /**

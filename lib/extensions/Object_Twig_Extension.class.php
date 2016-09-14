@@ -18,7 +18,7 @@
  */
 class Object_Twig_Extension extends Twig_Extension
 {
-  public function getFilters()
+  public function getFunctions()
   {
     return array(
       'object_input_date_tag'      => array('object_input_date_tag', false),

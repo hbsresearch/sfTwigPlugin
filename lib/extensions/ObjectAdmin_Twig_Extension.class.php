@@ -18,7 +18,7 @@
  */
 class ObjectAdmin_Twig_Extension extends Twig_Extension
 {
-  public function getFilters()
+  public function getFunctions()
   {
     return array(
       'object_admin_input_file_tag' => array('object_admin_input_file_tag', false),

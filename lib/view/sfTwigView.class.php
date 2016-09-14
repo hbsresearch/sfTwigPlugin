@@ -47,13 +47,12 @@ class sfTwigView extends sfPHPView
 
     $this->configuration = $this->context->getConfiguration();
 
-    // empty array becuase it changes based on the rendering context
+    // empty array because it changes based on the rendering context
     $this->loader = new Twig_Loader_Filesystem(array());
 
-    $this->twig = new sfTwigEnvironment($this->loader, array(
-      'cache'      => sfConfig::get('sf_template_cache_dir'),
-      'debug'      => sfConfig::get('sf_debug', false),
-      'sf_context' => $this->context,
+    $this->twig = new sfTwigEnvironment($this->loader, array_merge(array(
+        'sf_context' => $this->context,
+      ), sfConfig::get('sf_twig_options', array())
     ));
 
     if ($this->twig->isDebug())
@@ -121,7 +120,7 @@ class sfTwigView extends sfPHPView
       $this->dispatcher->notify(new sfEvent($this, 'application.log', array(sprintf('Render "%s"', $file))));
     }
 
-    $this->loader->setPaths((array) realpath(dirname($file)));
+    $this->loader->setPaths(array_merge((array) realpath(dirname($file)), $this->configuration->getDecoratorDirs()));
 
     $event = $this->dispatcher->filter(new sfEvent($this, 'template.filter_parameters'), $this->attributeHolder->getAll());
 
